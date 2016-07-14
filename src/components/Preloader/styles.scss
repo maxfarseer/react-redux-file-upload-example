@@ -1,0 +1,18 @@
+@keyframes animatedCog {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+   transform: rotate(360deg);
+  }
+}
+.preloader-wrapper {
+  background: #FFF;
+  display: inline-block;
+  line-height: 32px;
+}
+
+.preloader {
+  position: absolute;
+  animation: animatedCog 10s linear infinite;
+}
