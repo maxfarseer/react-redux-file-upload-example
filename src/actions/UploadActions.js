@@ -19,13 +19,14 @@ export function uploadFile(file) {
             text: 'something going wrong',
           }))
         } else {
+          const data = JSON.parse(res.text)
           dispatch({
             type: 'UPLOAD_SUCCESS',
-            data: JSON.parse(res.text),
+            data,
           })
           dispatch(showNotification({
             status: 'ok',
-            text: 'File uploaded',
+            text: `File uploaded. Key: ${data.key}`,
           }))
         }
       }, err => {
