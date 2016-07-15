@@ -50,7 +50,7 @@ describe('Uploaded reducer', () => {
 
     const action = {
       type: 'UPLOAD_SUCCESS',
-      data: 'b'
+      data: 'b',
     }
 
     const nextState = reducer(initialState, action)
