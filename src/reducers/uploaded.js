@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux'
 
+import {
+  UPLOAD_REQUEST,
+  UPLOAD_FAILURE,
+  UPLOAD_SUCCESS,
+} from '../constants/Upload'
+
 const items = (state = [], action) => {
   switch(action.type) {
-    case 'UPLOAD_SUCCESS':
+    case UPLOAD_SUCCESS:
       return [...state, action.data]
 
     default:
@@ -12,11 +18,11 @@ const items = (state = [], action) => {
 
 const isFetching = (state = false, action) => {
   switch(action.type) {
-    case 'UPLOAD_REQUEST':
+    case UPLOAD_REQUEST:
       return true
 
-    case 'UPLOAD_FAILURE':
-    case 'UPLOAD_SUCCESS':
+    case UPLOAD_FAILURE:
+    case UPLOAD_SUCCESS:
       return false
 
     default:

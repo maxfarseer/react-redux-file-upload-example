@@ -1,4 +1,10 @@
 import {
+  UPLOAD_REQUEST,
+  UPLOAD_FAILURE,
+  UPLOAD_SUCCESS,
+} from '../constants/Upload'
+
+import {
   showNotification,
 } from './NotificationActions'
 
@@ -7,13 +13,13 @@ const request = require('superagent-bluebird-promise')
 export function uploadFile(file) {
 
   return dispatch => {
-    dispatch({ type: 'UPLOAD_REQUEST' })
+    dispatch({ type: UPLOAD_REQUEST })
 
     return request.post('https://file.io')
       .attach('file', file, file.name)
       .then(res => {
         if (!res.ok) {
-          dispatch({ type: 'UPLOAD_FAILURE' })
+          dispatch({ type: UPLOAD_FAILURE })
           dispatch(showNotification({
             status: 'err',
             text: 'something going wrong',
@@ -21,7 +27,7 @@ export function uploadFile(file) {
         } else {
           const data = JSON.parse(res.text)
           dispatch({
-            type: 'UPLOAD_SUCCESS',
+            type: UPLOAD_SUCCESS,
             data,
           })
           dispatch(showNotification({
@@ -30,7 +36,7 @@ export function uploadFile(file) {
           }))
         }
       }, err => {
-        dispatch({ type: 'UPLOAD_FAILURE' })
+        dispatch({ type: UPLOAD_FAILURE })
         dispatch(showNotification({
           status: 'err',
           text: err.message,

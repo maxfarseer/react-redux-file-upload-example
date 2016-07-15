@@ -1,4 +1,11 @@
 import {expect} from 'chai'
+
+import {
+  UPLOAD_REQUEST,
+  UPLOAD_FAILURE,
+  UPLOAD_SUCCESS,
+} from '../../src/constants/Upload'
+
 import reducer from '../../src/reducers/uploaded'
 
 describe('Uploaded reducer', () => {
@@ -11,7 +18,7 @@ describe('Uploaded reducer', () => {
     }
 
     const action = {
-      type: 'UPLOAD_REQUEST',
+      type: UPLOAD_REQUEST,
     }
 
     const nextState = reducer(initialState, action)
@@ -30,7 +37,7 @@ describe('Uploaded reducer', () => {
     }
 
     const action = {
-      type: 'UPLOAD_FAILURE',
+      type: UPLOAD_FAILURE,
     }
 
     const nextState = reducer(initialState, action)
@@ -49,7 +56,7 @@ describe('Uploaded reducer', () => {
     }
 
     const action = {
-      type: 'UPLOAD_SUCCESS',
+      type: UPLOAD_SUCCESS,
       data: 'b',
     }
 
