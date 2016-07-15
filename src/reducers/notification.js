@@ -32,11 +32,14 @@ const notification = (state = {}, action) => {
 const byId = (state = {}, action) => {
   switch(action.type) {
     case NOTIFICATION_SHOW:
-    case NOTIFICATION_HIDE:
       return {
         ...state,
         [action.id]: notification(state[action.id], action),
       }
+    case NOTIFICATION_HIDE:
+      let nextState = { ...state }
+      delete nextState[action.id]
+      return nextState
     default:
       return state
   }
@@ -46,7 +49,14 @@ const allIds = (state = [], action) => {
   switch(action.type) {
     case NOTIFICATION_SHOW:
       return [...state, action.id]
+    case NOTIFICATION_HIDE:
+      const index = state.findIndex((i) => i === action.id)
 
+      let nextState = [
+        ...state.slice(0, index),
+        ...state.slice(index+1),
+      ]
+      return nextState
     default:
       return state
   }

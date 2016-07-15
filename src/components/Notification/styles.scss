@@ -1,10 +1,18 @@
-//TODO: protect dublicate classnames
-.wrapper {
-
+.notification {
+  max-width: 300px;
+  color: #FFF;
+  border: 1px solid #000;
+  top: 5px;
+  padding: 5px;
 }
-.wrapper_err {
+.notification_err {
   background: #FF0000;
 }
-.wrapper_ok {
+.notification_ok {
   background: green;
+}
+.notfication-close {
+  padding: 0 0 0 10px;
+  float: right;
+  cursor: pointer;
 }

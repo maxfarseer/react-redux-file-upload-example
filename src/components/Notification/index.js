@@ -5,13 +5,14 @@ export default class Notification extends Component {
   render() {
     const { clickHandler, isShown, text, status } = this.props
     return (
-      <section>
-        <div className={'wrapper wrapper_' + status + ' ' + (isShown ? '':'none')}>
-          <div className='row'>
-            <div className='col-sm-12' onClick={clickHandler}>{text}</div>
+      <div className={'notification notification_' + status + ' ' + (isShown ? '':'hidden')}>
+        <div className='row'>
+          <div className='col-sm-12'>
+            {text}
+            <i className='fa fa-times notfication-close' onClick={clickHandler}></i>
           </div>
         </div>
-      </section>
+      </div>
     )
   }
 }

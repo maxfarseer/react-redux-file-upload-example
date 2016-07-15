@@ -15,7 +15,6 @@ npm run validate
 ````
 
 #### Tests
-Tests in watch mode:
 ````bash
-npm run test:watch
+npm run test
 ````

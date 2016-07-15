@@ -16,7 +16,7 @@ class App extends Component {
         <NotificationList />
         <h4>Add file</h4>
         <div className='row'>
-          <div className='col-xs-6'>
+          <div className='col-xs-6 upload-form-wrapper'>
             <UploadForm handleSubmit={this.props.upload} />
           </div>
         </div>

@@ -6,6 +6,8 @@ import {
   hideNotification,
 } from '../../actions/NotificationActions'
 
+require('./styles.scss')
+
 class NotificationList extends Component {
   render() {
     const { notifications, hideNotification } = this.props
