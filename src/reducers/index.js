@@ -11,6 +11,7 @@ export const rootReducer = combineReducers({
 export const getArrayNotifications = (state, action) =>
   fromNotification.getArrayNotifications(state.notificationList, action)
 
+//UPLOADED
 export const getUploadedItems = (state) =>
   fromUploaded.getFilesArray(state.uploaded)
 

@@ -10,18 +10,8 @@ const notification = (state = {}, action) => {
     case NOTIFICATION_SHOW:
       return {
         id: action.id,
-        isShown: true,
         text: action.text,
         status: action.status,
-      }
-
-    case NOTIFICATION_HIDE:
-      if (state.id != action.id) {
-        return state
-      }
-      return {
-        ...state,
-        isShown: false,
       }
 
     default:

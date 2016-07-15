@@ -8,7 +8,7 @@ import {
 
 describe('Notification reducer', () => {
 
-  it('show Notification with error text (add notification item', () => {
+  it('show Notification with error text (add notification item)', () => {
     const initialState = {
       allIds: [],
       byId: {},
@@ -30,7 +30,6 @@ describe('Notification reducer', () => {
           status: 'err',
           text: 'Something going wrong',
           id: 'fake-v4-id',
-          isShown: true,
         },
       },
     })
@@ -44,7 +43,6 @@ describe('Notification reducer', () => {
           status: 'err',
           text: 'Something going wrong',
           id: 'fake-v4-id',
-          isShown: true,
         },
       },
     }

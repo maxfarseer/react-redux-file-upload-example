@@ -3,9 +3,9 @@ require('./styles.scss')
 
 export default class Notification extends Component {
   render() {
-    const { clickHandler, isShown, text, status } = this.props
+    const { clickHandler, text, status } = this.props
     return (
-      <div className={'notification notification_' + status + ' ' + (isShown ? '':'hidden')}>
+      <div className={'notification notification_' + status}>
         <div className='row'>
           <div className='col-sm-12'>
             {text}
@@ -18,7 +18,7 @@ export default class Notification extends Component {
 }
 
 Notification.propTypes = {
-  isShown: PropTypes.bool.isRequired,
   text: PropTypes.string,
+  status: PropTypes.string,
   clickHandler: PropTypes.func.isRequired,
 }

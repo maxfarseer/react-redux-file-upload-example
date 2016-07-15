@@ -16,7 +16,6 @@ class NotificationList extends Component {
         {notifications.map(item =>
           <Notification
             key={item.id}
-            isShown={item.isShown}
             text={item.text}
             status={item.status}
             clickHandler={() => hideNotification(item.id)}
