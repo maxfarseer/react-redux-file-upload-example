@@ -5,10 +5,6 @@ import {
 
 import { v4 } from 'node-uuid'
 
-/*
-TODO: DOCUMENT THIS
-*/
-
 export function showNotification(params) {
   return {
     type: NOTIFICATION_SHOW,
